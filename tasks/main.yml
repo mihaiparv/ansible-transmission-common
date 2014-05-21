@@ -1,0 +1,12 @@
+---
+# tasks file for ansible-transmission-common
+
+- name: ensure the transmission components are installed
+  apt: name={{ item }}
+       state=latest
+       update_cache=yes
+  with_flattened:
+    - transmission_core_components
+    - transmission_optional_components
+  when: ansible_os_family == 'Debian'
+  tags: transmission

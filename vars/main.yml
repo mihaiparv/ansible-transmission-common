@@ -1,0 +1,5 @@
+---
+transmission_core_components:
+  - transmission-cli
+  - transmission-common
+  - transmission-daemon
